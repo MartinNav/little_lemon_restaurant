@@ -16,14 +16,6 @@ def staticfiles(request,name):
     return HttpResponse(request,code=404)
 
 
-class MenuItemView(ListCreateAPIView):
-  queryset = MenuItem.objects.all()
-  serializer_class = MenuSerializer
-
-
-class SingleMenuItemView(RetrieveUpdateAPIView, DestroyAPIView):
-  queryset = MenuItem.objects.all()
-  serializer_class = MenuSerializer
 
 
 class MenuItemsView(ListCreateAPIView):
