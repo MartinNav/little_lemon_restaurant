@@ -19,6 +19,7 @@ def staticfiles(request,name):
     return HttpResponse(request,code=404)
 
 class BookingViewSet(ModelViewSet):
+  permission_classes = [IsAuthenticated]
   queryset = Booking.objects.all()
   serializer_class = BookingSerializer
 
